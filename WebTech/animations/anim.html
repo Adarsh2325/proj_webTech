@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <title>Document</title>
+    <style>
+        .container
+        {
+            display: flex;
+            gap: 30px;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-content: center;
+            height: 400px;
+        }
+        .items
+        {
+            background-color: aqua;
+            height: 50px;
+            width: 50px;
+            border-radius: 50%;
+            animation-name: key;
+            animation-duration: 1s;
+            animation-timing-function: linear;
+            animation-delay: 0s;
+            animation-iteration-count: infinite;
+            animation-direction: alternate;
+        }
+        body
+        {
+            background-color: black;
+         
+        }
+        .one
+        {
+            background-color: orange;
+            animation-duration: 0.5s;
+            animation-delay: 1s;
+        }
+        .two
+        {
+            background-color: blue;
+            animation-duration: 0.6s;
+            animation-delay: 1.2s;
+        }
+        .three
+        {
+            background-color: gray;
+             animation-duration: 0.7s;
+            animation-delay: 1.4s;
+        }
+        .four
+        {
+            background-color: white;
+            animation-duration: 0.8s;
+            animation-delay: 1.6s;
+        }
+        .five
+        {
+            background-color: red;
+            animation-duration: 0.8s;
+            animation-delay: 1.0s;
+        }
+        .six
+        {
+          background-color: yellow;
+          animation-duration: 0.6s;
+          animation-delay: 1.2s;
+        }
+        .eight
+        {
+            background-color: burlywood;
+            animation-duration: 1s;
+            animation-delay: 1.2s;
+        }
+
+        @keyframes key {
+            0%
+            {
+                transform: scale(1.5);
+            }
+            100%
+            {
+                transform: scale(1.0);
+            }
+            
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="items one"></div>
+        <div class="items two"></div>
+        <div class="items three"></div>
+        <div class="items four"></div>
+        <div class="items five"></div>
+        <div class="items six"></div>
+        <div class="items seveen"></div>
+        <div class="items eight"></div>
+    </div>
+</body>
+</html>
