@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background-color: #f0f0f0;
+        font-family: Arial, sans-serif;
+    }
+    .timer {
+        background: white;
+        border-radius: 10px;
+        padding: 20px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        text-align: center;
+    }
+    .time {
+        font-size: 3em;
+        margin-bottom: 20px;
+    }
+    .time span {
+        display: inline-block;
+        min-width: 30px;
+    }
+    .buttons button {
+        font-size: 1em;
+        padding: 10px 20px;
+        margin: 5px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+    }
+    .buttons button:hover {
+        background-color: #ddd;
+    }
+</style>
+<body>
+    <div class="timer">
+        <div class="time" id="display">
+           <span id="minutes">00</span>:<span id="seconds">00</span>:<span id="milliseconds">00</span>
+        </div>
+        <div class="buttons">
+            <button id="start">Start</button>
+            <button id="stop">Stop</button>
+            <button id="reset">Reset</button>
+        </div>
+    </div>
+    <script>
+        let min=document.querySelector("#minutes");
+        let sec=document.querySelector("#seconds");
+        let millisec=document.querySelector("#milliseconds");
+        let startbtn=document.querySelector("#start");
+        let stopbtn=document.querySelector("#stop");
+        let resetbtn=document.querySelector("#reset");
+        let Interval=null;
+        let flag=true;
+        let minn=0;
+        let secc=0;
+        let milisecc=0;
+
+        function start()
+        {
+            
+                milisecc+=10;
+                if(milisecc==1000)
+                {
+                    secc++;
+                    milisecc=0;
+                }
+                if(secc==60)
+                {
+                    minn++;
+                    secc=0;
+                }
+            
+            min.textContent=conc(minn);
+            sec.textContent=conc(secc);
+            millisec.textContent=conc(milisecc);
+        };
+        startbtn.addEventListener("click",function()
+        {
+           if(flag)
+           {
+            Interval=setInterval(start,10);
+            flag=false;
+           }
+
+        });
+        stopbtn.addEventListener("click",function()
+        {
+            if(!flag)
+            {
+                clearInterval(Interval);
+                flag=true;
+            }
+        });
+
+        resetbtn.addEventListener("click",function()
+        {
+            min.textContent="00";
+            sec.textContent="00";
+            millisec.textContent="00";
+            minn=0;
+            secc=0;
+            milisecc=0;
+        });
+        function conc(time)
+        {
+            if(time<=9)
+            {
+                return `0${time}`;
+            }
+            else
+            {
+                return time;
+            }
+        }
+
+      
+
+
+
+    </script>
+</body>
+</html>
