@@ -1,0 +1,46 @@
+html
+{
+  background-image: url(https://tharawat.org/wp-content/uploads/2014/07/university-background-04.jpg);
+  background-attachment: fixed;
+}
+
+h1
+{
+  text-align: center;
+  text-shadow: 0px 0px 10px red ;
+  color: rgb(234, 234, 235);
+}
+table
+{
+  width: 100%;
+}
+fieldset
+{
+background-color: rgba(0, 0, 0, 0.4);
+ border: 3px solid black;
+ border-radius: 0px 10px;
+}
+fieldset>legend
+{
+ background-color: brown;
+ padding: 10px;
+ border-radius: 0px 20px;
+ font-size: large;
+}
+
+#button
+{
+  padding: 50px;
+}
+
+table td
+{
+  color: antiquewhite;
+  font-size: 20px;
+  padding: 10px;
+}
+ table td input
+ {
+  border-radius: 10px;
+
+ }
